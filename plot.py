@@ -1,4 +1,4 @@
-import str
+import strength
 import datetime
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -10,9 +10,9 @@ ys=[]
 xs=[]
 
 def animate(f,xs,ys):
-    strength = -(str.get_wifi_signal_strength())
+    stren = -(strength.get_wifi_signal_strength())
     xs.append(datetime.datetime.now().strftime('%M:%S'))
-    ys.append(strength)
+    ys.append(stren)
     
     plt.cla()
     ax.plot(xs,ys)    
@@ -25,4 +25,5 @@ def animate(f,xs,ys):
     plt.xlabel('time')
 ani=animation.FuncAnimation(fig,animate,fargs=(xs,ys),interval=1000,blit=True)
 plt.tight_layout()
+
 plt.show()
